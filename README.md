@@ -1,4 +1,4 @@
 # fantasyPL
 
-Patrick Bald - @patrickbald
+Patrick Bald - @patrickbald <br/>
 Rob Reutiman - @Rob-Reutiman
