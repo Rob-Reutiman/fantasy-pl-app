@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
+import Nav from './nav';
+import FeaturedPicks from './featured-picks';
+import DetailedAnalysis from './detailed-analysis';
+import FixtureDifficultyRanking from './fdr';
+//import Footer from './footer';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "Peems"
+    }
+  }
+
+  render () {
+    return (
+      <React.Fragment>
+
+        <Nav username={this.state.username}/>
+
+        <div className="page-content">
+
+          <FeaturedPicks/>
+
+          <DetailedAnalysis/>
+
+          <FixtureDifficultyRanking/>
+      
+        </div>
+
+        {/* <Footer/> */}
+
+      </React.Fragment>
+    )
+  };
 }
 
 export default App;
