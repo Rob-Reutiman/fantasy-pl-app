@@ -14,11 +14,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       username: "Peems",
-      featuredPlayers: []
+      featuredPlayers: [],
+      playerDetails: []
     }
   }
 
   componentDidMount(){
+    /* Feature players call */
     axios.post("http://127.0.0.1:8000/featured/",{
       username: "robo",
       password: "jeems"
@@ -32,6 +34,19 @@ class App extends React.Component {
         featuredPlayers: [players.featured_fwd, players.featured_mid, players.featured_def, players.featured_gkp]
       });
     })
+
+    /* Detailed stats call */
+    axios.post("http://127.0.0.1:8000/players/",{
+      username: "robo",
+      password: "jeems"
+    })
+    .then((result) => {
+      console.log(result.data);
+      let playerDetails = result.data.players;
+      this.setState({playerDetails});
+    })
+
+
   }
 
   render () {
@@ -44,7 +59,7 @@ class App extends React.Component {
 
           <FeaturedPicks featured={this.state.featuredPlayers}/>
 
-          <DetailedAnalysis/>
+          <DetailedAnalysis players={this.state.playerDetails}/>
 
           <FixtureDifficultyRanking/>
       
