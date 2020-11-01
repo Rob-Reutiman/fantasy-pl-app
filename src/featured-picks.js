@@ -19,10 +19,10 @@ class FeaturedPicks extends React.Component {
   render () {
     return(
       <React.Fragment>
-      <h1>Featured Picks</h1><br/>
         <div className="section">
+          <h1>Featured Picks</h1><br/>
           <div class="card-deck">
-            {!this.state.loading ? (this.props.featured.map((p) => {
+            {!this.state.loading ? (this.props.featured.map((p) => { return (
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">{p.name}</h5>
@@ -30,7 +30,7 @@ class FeaturedPicks extends React.Component {
                 <p class="card-text">{p.teamID}</p>
               </div>
             </div>
-            })) : (
+            )})) : (
             <p>loading...</p>
             )}
           </div>

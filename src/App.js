@@ -19,7 +19,10 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    axios.get("http://127.0.0.1:53075/featured/")
+    axios.post("http://127.0.0.1:8000/featured/",{
+      username: "robo",
+      password: "jeems"
+    })
     .then((result) => {
 
       console.log(result.data);
