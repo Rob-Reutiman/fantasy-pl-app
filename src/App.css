@@ -36,3 +36,7 @@ body {
   color: #0d7377;
   text-align: center;
 }
+
+.player-photo {
+  padding: 5px 5px;
+}

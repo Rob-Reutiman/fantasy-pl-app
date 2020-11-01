@@ -6,13 +6,13 @@ class FeaturedPicks extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      loading: true
+      loading: true,
     }
   }
 
   componentDidMount(){
     this.setState({
-      loading: true
+      loading: false
     })
   }
 
@@ -21,13 +21,14 @@ class FeaturedPicks extends React.Component {
       <React.Fragment>
         <div className="section">
           <h1>Featured Picks</h1><br/>
-          <div class="card-deck">
+          <div className="card-deck">
             {!this.state.loading ? (this.props.featured.map((p) => { return (
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{p.name}</h5>
-                <p class="card-text">{p.position}</p>
-                <p class="card-text">{p.teamID}</p>
+            <div className="card">
+              <img src={`https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`} className="player-photo"/>
+              <div className="card-body">
+                <h5 className="card-title">{p.firstName + " " + p.lastName}</h5>
+                <p className="card-text">Goals: {p.goals}</p>
+                <p className="card-text">Assists: {p.assists}</p>
               </div>
             </div>
             )})) : (

@@ -19,19 +19,17 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    axios.post("http://127.0.0.1:8000/featured/",{
-      username: "robo",
-      password: "jeems"
-    })
-    .then((result) => {
+    axios.post("http://127.0.0.1:8000/featured/", {
+      username: "robo", password: "jeems"
+    }).then((result) => {
 
-      console.log(result.data);
-      let players = result.data;
-
+      console.log("results data: ", result.data);
       this.setState({
-        featuredPlayers: [players.featured_fwd, players.featured_mid, players.featured_def, players.featured_gkp]
+        featuredPlayers: [result.data["featured_fwd"], result.data["featured_mid"], result.data["featured_def"], result.data["featured_gkp"]]
       });
     })
+
+    console.log("featured players: ", this.state.featuredPlayers);
   }
 
   render () {
