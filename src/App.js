@@ -23,10 +23,10 @@ class App extends React.Component {
     .then((result) => {
 
       console.log(result.data);
-      players = result.data;
+      let players = result.data;
 
       this.setState({
-        featured: [players.featured_fwd, players.featured_mid, players.featured_def, players.featured_gkp]
+        featuredPlayers: [players.featured_fwd, players.featured_mid, players.featured_def, players.featured_gkp]
       });
     })
   }
