@@ -30,8 +30,9 @@ class App extends React.Component {
       console.log(result.data);
       let players = result.data;
 
+      console.log("results data: ", result.data);
       this.setState({
-        featuredPlayers: [players.featured_fwd, players.featured_mid, players.featured_def, players.featured_gkp]
+        featuredPlayers: [result.data["featured_fwd"], result.data["featured_mid"], result.data["featured_def"], result.data["featured_gkp"]]
       });
     })
 
@@ -45,7 +46,6 @@ class App extends React.Component {
       let playerDetails = result.data.players;
       this.setState({playerDetails});
     })
-
 
   }
 
