@@ -8,6 +8,7 @@ body {
   font-size: 100%;
 }
 
+/* Navigation */
 .navigation {
   background-color: #212121;
   overflow: hidden;
@@ -32,6 +33,14 @@ body {
   text-align: right;
 }
 
+/* Login */
+.form-container {
+  padding-top: 20px;
+  padding-right: 20%;
+  padding-left: 20%;
+}
+
+/* General */
 .section {
   padding: 30px;
 }
@@ -41,6 +50,21 @@ body {
   text-align: center;
 }
 
+.submit {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.submit button {
+  background-color: #0d7377;
+  border-color: #eeeeee;
+}
+
+.submit button:hover {
+  background-color: #32e0c4;
+  border-color: #eeeeee;
+}
+
 .player-photo {
   padding: 5px 5px;
   width: fit-content;
@@ -48,12 +72,11 @@ body {
   align-self: center;
 }
 
+/* Table */
 .thumbnail {
   height: 35px;
   width: 30px;
 }
-
-/* Table */
 
 .table-headers {
   display: block;
