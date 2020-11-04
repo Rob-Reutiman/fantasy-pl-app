@@ -66,10 +66,14 @@ body {
 }
 
 .player-photo {
-  padding: 5px 5px;
-  width: fit-content;
+  height: 100%;
+  width: 100%;
   height: fit-content;
-  align-self: center;
+}
+
+.img-wrapper {
+  padding: 10px;
+  text-align: center;
 }
 
 /* Table */

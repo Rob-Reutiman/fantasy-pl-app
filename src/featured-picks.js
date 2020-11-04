@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 class FeaturedPicks extends React.Component {
 
@@ -25,14 +24,27 @@ class FeaturedPicks extends React.Component {
           <div className="card-deck">
             {!this.state.loading ? (this.props.featured.map((p, index) => { return (
               <div className="card">
-              <div className="card-header" style={{textAlign: "center"}}>{this.state.positions[index]}</div>
-              <img src={`https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`} className="player-photo" alt=""/>
-              <div className="card-body">
-                <h5 className="card-title">{p.firstName + " " + p.lastName}</h5>
-                {index !== 3 ? <p className="card-text">Goals: {p.goals}</p> : <p className="card-text">Clean Sheets: {p.clean_sheets}</p>}
-                {index !== 3 ? <p className="card-text">Assists: {p.assists}</p> : <p className="card-text">Saves: {p.saves}</p>}
+                <div className="card-header" style={{textAlign: "center"}}>{this.state.positions[index]}</div>
+                <div className="img-wrapper">
+                  <img src={`https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`} className="player-photo" alt=""/>
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">{p.firstName + " " + p.lastName}</h5>
+                  {index !== 3 && 
+                    <div>
+                      <p className="card-text">Goals: {p.goals}</p>
+                      <p className="card-text">Assists: {p.assists}</p>
+                      <p className="card-text">Clean Sheets: {p.clean_sheets}</p>
+                    </div>
+                  }
+                  {index === 3 && 
+                    <div>
+                      <p className="card-text">Clean Sheets: {p.clean_sheets}</p>
+                      <p className="card-text">Saves: {p.saves}</p>
+                    </div>
+                  }
+                </div>
               </div>
-            </div>
             )})) : (
             <p>loading...</p>
             )}
