@@ -39,4 +39,7 @@ body {
 
 .player-photo {
   padding: 5px 5px;
+  width: fit-content;
+  height: fit-content;
+  align-self: center;
 }
