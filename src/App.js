@@ -27,7 +27,7 @@ class App extends React.Component {
 
     e.preventDefault();
 
-    const data = { username: this.state.username, password: this.state.password };
+    const data = { "username": this.state.username, "password": this.state.password };
     await axios.post("http://127.0.0.1:8000/auth/", data)
     .then((result) => {
       let auth = result.data["result"] === "success";
