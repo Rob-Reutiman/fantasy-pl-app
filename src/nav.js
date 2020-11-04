@@ -4,9 +4,9 @@ class Nav extends React.Component {
 
   render () {
     return(
-      <nav class="navbar navbar-expand-lg navigation">
+      <nav className="navbar navigation">
         <span className="brand">Fantasy Premier League Analytics</span>
-        <span>{this.props.username}</span>
+        <span className="right">{this.props.username}</span>
       </nav>
     );
   }

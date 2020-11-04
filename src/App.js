@@ -3,6 +3,7 @@ import Nav from './nav';
 import FeaturedPicks from './featured-picks';
 import DetailedAnalysis from './detailed-analysis';
 import FixtureDifficultyRanking from './fdr';
+import MyTeam from './myTeam';
 import axios from 'axios';
 //import Footer from './footer';
 import './App.css';
@@ -122,7 +123,10 @@ class App extends React.Component {
 
             <DetailedAnalysis players={this.state.playerDetails}/>
 
-            <FixtureDifficultyRanking/>
+            {/* <FixtureDifficultyRanking/> */}
+
+            <MyTeam/>
+
       
           </div>
 
