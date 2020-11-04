@@ -25,7 +25,11 @@ body {
 }
 
 .navigation .brand {
-  float: left;
+  text-align: left;
+}
+
+.navigation .right {
+  text-align: right;
 }
 
 .section {
@@ -42,4 +46,36 @@ body {
   width: fit-content;
   height: fit-content;
   align-self: center;
+}
+
+.thumbnail {
+  height: 35px;
+  width: 30px;
+}
+
+/* Table */
+
+.table-headers {
+  display: block;
+}
+
+.selector {
+  float: right;
+  margin-bottom: 10px;
+}
+
+.sortby {
+  float: left;
+  margin-right: 10px;
+}
+
+.table-row {
+  height: 50px;
+  text-align: center;
+}
+
+.table-row td img {
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-right: -10px;
 }
