@@ -14,9 +14,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      authenticated: false,
-      username: "",
-      password: "",
+      authenticated: true,
+      username: "robo",
+      password: "jeems",
       featuredPlayers: [],
       playerDetails: []
     }
@@ -24,20 +24,8 @@ class App extends React.Component {
     this.handleFormInput = this.handleFormInput.bind(this);
    }
 
-  async handleLogin(e){
-
-    e.preventDefault();
-
-    const data = { "username": this.state.username, "password": this.state.password };
-    await axios.post("http://127.0.0.1:8000/auth/", data)
-    .then((result) => {
-      let auth = result.data["result"] === "success";
-      this.setState = {
-        authenticated: auth
-      }
-    })
-
-    /* Feature players call */
+   componentDidMount() {
+     /* Feature players call */
     axios.post("http://127.0.0.1:8000/featured/", {
       username: this.state.username,
       password: this.state.password
@@ -61,6 +49,22 @@ class App extends React.Component {
       let playerDetails = result.data.players;
       this.setState({playerDetails});
     })
+   }
+
+  async handleLogin(e){
+
+    e.preventDefault();
+
+    const data = { "username": this.state.username, "password": this.state.password };
+    await axios.post("http://127.0.0.1:8000/auth/", data)
+    .then((result) => {
+      let auth = result.data["result"] === "success";
+      this.setState = {
+        authenticated: auth
+      }
+    })
+
+    /* Move componentDidMount() here when done testing */
 
   }
 
