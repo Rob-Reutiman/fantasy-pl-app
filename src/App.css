@@ -4,7 +4,7 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #eeeeee;
+  background-color: #32e0c4;
   font-size: 100%;
 }
 
@@ -46,7 +46,8 @@ body {
 }
 
 .section h1 {
-  color: #0d7377;
+  color: #212121;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -61,8 +62,9 @@ body {
 }
 
 .submit button:hover {
-  background-color: #32e0c4;
-  border-color: #eeeeee;
+  color: #0d7377;
+  background-color: #eeeeee;
+  border-color: #0d7377;
 }
 
 .player-photo {
@@ -105,4 +107,20 @@ body {
   margin-top: -10px;
   margin-bottom: -10px;
   margin-right: -10px;
+}
+
+/* Footer */
+.footer {
+  padding-top: 30px;
+  display: block;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 80px;
+  background-color: #212121;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.footer span {
+  color: #eeeeee;
 }

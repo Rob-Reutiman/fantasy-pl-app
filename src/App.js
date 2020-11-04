@@ -5,7 +5,7 @@ import DetailedAnalysis from './detailed-analysis';
 import FixtureDifficultyRanking from './fdr';
 import MyTeam from './myTeam';
 import axios from 'axios';
-//import Footer from './footer';
+import Footer from './footer';
 import './App.css';
 
 
@@ -90,7 +90,6 @@ class App extends React.Component {
 
         <Nav username={this.state.username}/>
 
-
         {!this.state.authenticated &&
 
         <div className="section">
@@ -144,11 +143,11 @@ class App extends React.Component {
       
           </div>
 
+          <Footer/>
+
         </React.Fragment>
 
         }
-
-        {/* <Footer/> */}
 
       </React.Fragment>
     )
