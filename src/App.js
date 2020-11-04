@@ -94,7 +94,7 @@ class App extends React.Component {
 
         <div className="section">
 
-          <h1>Login</h1>
+          <h1 className="login">Login</h1>
 
           <div className="container form-container">
             <form>
@@ -143,11 +143,11 @@ class App extends React.Component {
       
           </div>
 
-          <Footer/>
-
         </React.Fragment>
 
         }
+
+        <Footer/>
 
       </React.Fragment>
     )
