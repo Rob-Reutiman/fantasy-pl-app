@@ -5,7 +5,7 @@ class Nav extends React.Component {
   render () {
     return(
       <nav className="navbar navigation">
-        <span className="brand">Fantasy Premier League Analytics</span>
+        <span className="brand">Fantasy Premier League Companion</span>
         <span className="right">{this.props.username}</span>
       </nav>
     );
