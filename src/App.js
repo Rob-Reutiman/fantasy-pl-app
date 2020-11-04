@@ -84,29 +84,42 @@ class App extends React.Component {
 
       <React.Fragment>
 
+        <Nav username={this.state.username}/>
+
+
         {!this.state.authenticated &&
-        <div className="container" style={{padding: "20px"}}>
-          <form>
-            <div class="form-group">
-              <label>Username</label>
-              <input
-                type="username"
-                class="form-control" 
-                id="username" 
-                placeholder="Username" 
+
+        <div className="section">
+
+          <h1>Login</h1>
+
+          <div className="container form-container">
+            <form>
+              <div className="form-group">
+                <label>Username</label>
+                <input
+                  type="username"
+                  className="form-control" 
+                  id="username" 
+                  placeholder="Username" 
+                  onChange={this.handleFormInput} />
+              </div>
+              <div className="form-group">
+                <label>Password</label>
+                <input 
+                type="password" 
+                className="form-control" 
+                id="password" 
+                placeholder="Password"
                 onChange={this.handleFormInput} />
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input 
-              type="password" 
-              class="form-control" 
-              id="password" 
-              placeholder="Password"
-              onChange={this.handleFormInput} />
-            </div>
-            <button type="submit" class="btn btn-primary" onClick={this.handleLogin}>Submit</button>
-          </form>
+              </div>
+            </form>
+          </div>
+
+          <div className="submit">
+            <button type="submit" className="btn btn-primary" onClick={this.handleLogin}>Submit</button>
+          </div>
+
         </div>
 
         }
@@ -114,8 +127,6 @@ class App extends React.Component {
         { this.state.authenticated && 
 
         <React.Fragment>
-
-          <Nav username={this.state.username}/>
 
           <div className="page-content">
 
