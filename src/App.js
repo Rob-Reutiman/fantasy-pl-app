@@ -139,7 +139,7 @@ class App extends React.Component {
 
             {/* <FixtureDifficultyRanking/> */}
 
-            <MyTeam username={this.state.username}/>
+            {/* <MyTeam username={this.state.username}/> */}
       
           </div>
 
