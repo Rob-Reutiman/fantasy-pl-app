@@ -74,13 +74,9 @@ class App extends React.Component {
     const id = e.target.id;
     const target = e.target.value;
 
-    console.dir(id)
-    console.dir(target)
-
     await this.setState({
       [id]: target,
     });
-    console.log(this.state);
   };
 
   render () {
@@ -139,7 +135,7 @@ class App extends React.Component {
 
             {/* <FixtureDifficultyRanking/> */}
 
-            {/* <MyTeam username={this.state.username}/> */}
+            <MyTeam players={this.state.playerDetails} username={this.state.username}/>
       
           </div>
 
