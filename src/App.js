@@ -14,9 +14,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      authenticated: true,
-      username: "robo",
-      password: "jeems",
+      authenticated: false,
+      username: "",
+      password: "",
       featuredPlayers: [],
       playerDetails: []
     }
@@ -24,14 +24,26 @@ class App extends React.Component {
     this.handleFormInput = this.handleFormInput.bind(this);
    }
 
-   componentDidMount() {
-     /* Feature players call */
-    axios.post("http://127.0.0.1:8000/featured/", {
+  async handleLogin(e){
+    e.preventDefault();
+    console.log("Attempting auth");
+    const data = { username: this.state.username, password: this.state.password };
+    await axios.post("http://127.0.0.1:8000/auth/", data)
+    .then((result) => {
+      console.log("Got result from auth");
+      console.log(result.data);
+      let auth = result.data["result"] === "success";
+      console.log("auth", auth);
+      this.setState({
+        authenticated: auth
+      })
+    });
+
+    await axios.post("http://127.0.0.1:8000/featured/", {
       username: this.state.username,
       password: this.state.password
     })
     .then((result) => {
-
       console.log(result.data);
       console.log("results data: ", result.data);
       this.setState({
@@ -40,35 +52,19 @@ class App extends React.Component {
     })
 
     /* Detailed stats call */
-    axios.post("http://127.0.0.1:8000/players/", {
+    await axios.post("http://127.0.0.1:8000/players/", {
       username: this.state.username,
       password: this.state.password
     })
     .then((result) => {
       console.log(result.data);
-      let playerDetails = result.data.players;
-      this.setState({playerDetails});
+      let players = result.data.players;
+      this.setState({playerDetails: players});
     })
-   }
-
-  async handleLogin(e){
-
-    e.preventDefault();
-
-    const data = { "username": this.state.username, "password": this.state.password };
-    await axios.post("http://127.0.0.1:8000/auth/", data)
-    .then((result) => {
-      let auth = result.data["result"] === "success";
-      this.setState = {
-        authenticated: auth
-      }
-    })
-
-    /* Move componentDidMount() here when done testing */
-
+    console.log(this.state);
   }
 
-  async handleFormInput (e){
+  async handleFormInput(e){
     e.persist();
 
     const id = e.target.id;
@@ -93,9 +89,7 @@ class App extends React.Component {
         {!this.state.authenticated &&
 
         <div className="section">
-
           <h1 className="login">Login</h1>
-
           <div className="container form-container">
             <form>
               <div className="form-group">
