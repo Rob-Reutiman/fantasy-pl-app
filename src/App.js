@@ -40,6 +40,7 @@ class App extends React.Component {
 
     await axios.get("http://127.0.0.1:8000/featured/")
     .then((result) => {
+
       this.setState({
         featuredPlayers: [result.data["featured_fwd"], result.data["featured_mid"], result.data["featured_def"], result.data["featured_gkp"]]
       });
