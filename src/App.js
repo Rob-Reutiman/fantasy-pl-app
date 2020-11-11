@@ -26,14 +26,10 @@ class App extends React.Component {
 
   async handleLogin(e){
     e.preventDefault();
-    console.log("Attempting auth");
     const data = { username: this.state.username, password: this.state.password };
     await axios.post("http://127.0.0.1:8000/auth/", data)
     .then((result) => {
-      console.log("Got result from auth");
-      console.log(result.data);
       let auth = result.data["result"] === "success";
-      console.log("auth", auth);
       this.setState({
         authenticated: auth
       })
@@ -44,8 +40,6 @@ class App extends React.Component {
       password: this.state.password
     })
     .then((result) => {
-      console.log(result.data);
-      console.log("results data: ", result.data);
       this.setState({
         featuredPlayers: [result.data["featured_fwd"], result.data["featured_mid"], result.data["featured_def"], result.data["featured_gkp"]]
       });
@@ -57,11 +51,9 @@ class App extends React.Component {
       password: this.state.password
     })
     .then((result) => {
-      console.log(result.data);
       let players = result.data.players;
       this.setState({playerDetails: players});
     })
-    console.log(this.state);
   }
 
   async handleFormInput(e){

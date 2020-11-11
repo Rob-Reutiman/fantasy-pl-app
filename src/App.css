@@ -67,6 +67,8 @@ body {
 
 .submit button {
   background-color: #0d7377;
+  margin-left: 20px;
+  margin-right: 20px;
   border-color: #eeeeee;
 }
 

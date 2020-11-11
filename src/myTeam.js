@@ -1,5 +1,4 @@
 import React from 'react';
-import teams from './teams.json';
 
 class MyTeam extends React.Component {
 
@@ -26,6 +25,7 @@ class MyTeam extends React.Component {
   handleSubmit(e, index) {
     // Filter and set codes for images
     console.dir(e.target)
+    // Set total price
   }
 
   render () {
