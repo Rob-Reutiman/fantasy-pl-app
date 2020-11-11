@@ -67,6 +67,8 @@ body {
 
 .submit button {
   background-color: #0d7377;
+  margin-left: 20px;
+  margin-right: 20px;
   border-color: #eeeeee;
 }
 
@@ -84,6 +86,11 @@ body {
 
 .img-wrapper {
   padding: 10px;
+  text-align: center;
+}
+
+.invalid {
+  color: red;
   text-align: center;
 }
 
@@ -116,6 +123,44 @@ body {
   margin-top: -10px;
   margin-bottom: -10px;
   margin-right: -10px;
+}
+
+/* My Team */
+.team-row {
+  height: 300px;
+  padding: 20px;
+  border: 5px solid #212121;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.player-entry {
+  height: 250px;
+  width: 200px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.player-entry img {
+  height: 85%;
+  width: 100%;
+}
+
+.player-entry input {
+  margin-top: 5px;
+  min-height: 30px;
+  width: 100%;
+  text-align: center;
+  padding-left: 25px;
+}
+
+.player-entry datalist {
+  height: 40px;
+  overflow: hidden;
 }
 
 /* Footer */
