@@ -89,6 +89,11 @@ body {
   text-align: center;
 }
 
+.invalid {
+  color: red;
+  text-align: center;
+}
+
 /* Table */
 .thumbnail {
   height: 35px;
