@@ -7,6 +7,7 @@ Using React and CherryPy, this full stack web application  scrapes data from the
 # To Run:
 
 ### Server:
+https://github.com/Rob-Reutiman/fantasyPLserver
 python3 ./server.py localhost 8000
 
 ### Note:
