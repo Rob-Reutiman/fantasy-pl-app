@@ -2,7 +2,7 @@
 
 ## Description
 
-Using React and CherryPy, we built a full stack web application that scrapes data from the Fantasy Premier League API and runs basic algorithms to analyze top picks for the next week as well as calculate relevant metrics for elite fantasy performances. We also created an authentication portal which enabled users to create accounts, log in, and save their current teams with the app.
+Using React and CherryPy, this full stack web application  scrapes data from the Fantasy Premier League API and runs basic algorithms to analyze top picks for the next week as well as calculate relevant metrics for predicting elite fantasy performances. Users also have the abilitiy to create accounts, log in through the authentication portal, and save their current teams with the app.
 
 # To Run:
 
